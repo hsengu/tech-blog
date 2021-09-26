@@ -1,3 +1,4 @@
+// Event handler for focusing comment modal when opened
 async function commentBtnHandler(event) {
     event.preventDefault();
     $('#add-comment-modal').on('shown.bs.modal', function () {
@@ -5,6 +6,7 @@ async function commentBtnHandler(event) {
     });
 };
 
+// Event handler for handling comment form submission
 async function commentFormHandler(event) {
     event.preventDefault();
 

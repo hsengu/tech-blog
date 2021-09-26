@@ -3,6 +3,7 @@ const { Post, User, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
+// API route to get all Posts
 router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
@@ -35,6 +36,7 @@ router.get('/', (req, res) => {
         });
 });
 
+// API route to get a single Post
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -61,6 +63,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
+// API route to create a Post
 router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
@@ -74,6 +77,7 @@ router.post('/', withAuth, (req, res) => {
         });
 });
 
+// API route to update a Post
 router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
@@ -99,6 +103,7 @@ router.put('/:id', withAuth, (req, res) => {
         });
 });
 
+// API route to delete a single Post
 router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
         where: {

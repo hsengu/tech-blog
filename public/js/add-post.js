@@ -1,3 +1,4 @@
+// Event handler to focus modal when opened
 async function addBtnHandler(event) {
     event.preventDefault();
     $('#add-post-modal').on('shown.bs.modal', function () {
@@ -5,6 +6,7 @@ async function addBtnHandler(event) {
     });
 };
 
+// Event handler to handle form submission for creating a post
 async function newFormHandler(event) {
     event.preventDefault();
 

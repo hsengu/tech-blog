@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Post, User } = require('../../models');
 
+// API route to get all users
 router.get('/', (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] }
@@ -11,6 +12,7 @@ router.get('/', (req, res) => {
         });
 });
 
+// API route to get a single user
 router.get('/:id', (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
@@ -34,6 +36,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// API route to create a user
 router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
@@ -50,6 +53,7 @@ router.post('/', (req, res) => {
     });
 });
 
+// API route to login a user
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -77,6 +81,7 @@ router.post('/login', (req, res) => {
     });
 });
 
+// API route to update a user account
 router.put('/:id', (req, res) => {
     User.update(req.body, {
         individualHooks: true,

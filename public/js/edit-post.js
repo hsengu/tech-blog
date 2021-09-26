@@ -1,3 +1,4 @@
+// Event handler for focusing edit post modal
 async function editBtnHandler(event) {
     event.preventDefault();
 
@@ -21,6 +22,7 @@ async function editBtnHandler(event) {
     });
 };
 
+// Event handler for handling edit post form submission
 async function editFormHandler(event) {
     event.preventDefault();
 
@@ -47,6 +49,7 @@ async function editFormHandler(event) {
     }
 };
 
+// Event handler for deleting a post
 async function deleteFormHandler(event) {
     event.preventDefault();
 

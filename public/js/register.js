@@ -1,3 +1,4 @@
+// Event handler for handling registration form submission
 async function signupFormHandler(event) {
     event.preventDefault();
 
