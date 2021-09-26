@@ -13,12 +13,16 @@
                 {{#if posts.length}}
                 <section>
                     <h2>Your Posts</h2>
-                    <ol>
+                    <ol class="posts">
                         {{#each posts as |post|}}
                         <li>
                             {{> post-info post}}
-                            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+                            <form>
+                                <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#edit-post-modal" value={{post.id}}>Edit Post</button>
+                            </form>
                         </li>
+                        <br>
                         {{/each}}
                     </ol>
                 </section>
@@ -49,7 +53,8 @@
                     <div class="form-group row">
                         <label for="post-text" class="col-sm-2 col-form-label">Post:</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" id="post-text" rows="20" placeholder="Start blogging!"></textarea>
+                            <textarea class="form-control" id="post-text" rows="10"
+                                placeholder="Start blogging!"></textarea>
                         </div>
                     </div>
                 </form>
@@ -61,4 +66,39 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="edit-post-modal" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalTitle">Edit Post</h5>
+            </div>
+            <div class="modal-body">
+                <form class="edit-post-form">
+                    <div class="form-group row">
+                        <label for="edit-post-title" class="col-sm-2 col-form-label">Title:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="edit-post-title" aria-describedby="titleHelp"
+                                placeholder="Enter title">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="edit-post-text" class="col-sm-2 col-form-label">Post:</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="edit-post-text" rows="10"
+                                placeholder="Start blogging!"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nevermind</button>
+                <button id="publish-edit-btn" type="button" class="btn btn-primary">Publish changes</button>
+                <button id="delete-post-btn" type="button" class="btn btn-danger">Delete Post</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{#if posts.length}}
+<script src="/js/edit-post.js"></script>
+{{/if}}
 <script src="/js/add-post.js"></script>

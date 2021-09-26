@@ -1,7 +1,17 @@
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
-  {{/each}}
-</ol>
+<div class="container-fluid">
+  <section>
+    {{#if posts.length}}
+    <h2>Featured Blog Posts</h2>
+    {{else}}
+    <h2>Currently no posts available!</h2>
+    {{/if}}
+  </section>
+  <ol class="post-list">
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post }}
+    </li>
+    <br>
+    {{/each}}
+  </ol>
+</div>
