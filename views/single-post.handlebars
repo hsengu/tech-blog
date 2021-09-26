@@ -1,0 +1,46 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="d-flex flex-column justify-content-center">
+                {{> single-post-info post}}
+                {{#if loggedIn}}
+                <br>
+                <form class="add-comment-btn-form">
+                    <div class="form-group row">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#add-comment-modal">Add a comment</button>
+                    </div>
+                </form>
+                {{/if}}
+                {{> comments post.comments}}
+            </div>
+        </div>
+    </div>
+</div>
+{{#if loggedIn}}
+<div class="modal fade" id="add-comment-modal" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalTitle">New Comment</h5>
+            </div>
+            <div class="modal-body">
+                <form class="new-comment-form">
+                    <div class="form-group row">
+                        <label for="comment-text" class="col-sm-2 col-form-label">Comment:</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="comment-text" rows="10"
+                                placeholder="Say something!"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nevermind</button>
+                <button id="comment-btn" type="button" class="btn btn-primary">Comment</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/comment.js"></script>
+{{/if}}

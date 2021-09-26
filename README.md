@@ -21,6 +21,7 @@ View the application in action [here]().
 - Express.js
 - MySql
 - Sequelize ORM
+- Handlebars.js
 - Heroku
 
 ## Installation
