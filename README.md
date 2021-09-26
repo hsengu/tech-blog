@@ -14,7 +14,7 @@
 ## Description
 This project is an example of the Model, View, Controller web application design utilizing MySQL and Sequelize for the Model, Handlebars for the Views, and Express.js for the Controller. This application is meant to mimic a simple blog page where users can register an account, make new blog posts, edit, and delete existing posts and is deployed to Heroku.
 
-View the application in action [here]().
+View the application in action [here](https://fierce-atoll-63308.herokuapp.com/).
 
 ## Built With
 - Node.js
