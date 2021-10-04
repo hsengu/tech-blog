@@ -43,7 +43,7 @@ View the application in action [here](https://fierce-atoll-63308.herokuapp.com/)
 	$ npm start
 
 ## Contributing to Tech Blog
-Please follow contribution guidelines at the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) to contribute to Employee Tracker.
+Please follow contribution guidelines at the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) to contribute to Tech Blog.
 
 ## Tests
     There are no tests available for this application
